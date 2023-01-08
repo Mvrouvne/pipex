@@ -6,7 +6,7 @@
 /*   By: machaiba <machaiba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 23:33:09 by machaiba          #+#    #+#             */
-/*   Updated: 2023/01/06 18:13:42 by machaiba         ###   ########.fr       */
+/*   Updated: 2023/01/07 15:50:34 by machaiba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,3 @@ char	*ft_substr(char *str, unsigned int start, size_t len)
 	subs[x] = '\0';
 	return (subs);
 }
-
-// int main()
-// {
-// 	char *str = "PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki";
-// 	printf("%s\n", ft_substr(str, 5, strlen(str)));
-// }

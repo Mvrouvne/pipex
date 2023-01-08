@@ -6,7 +6,7 @@
 /*   By: machaiba <machaiba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 17:52:29 by machaiba          #+#    #+#             */
-/*   Updated: 2023/01/03 17:44:14 by machaiba         ###   ########.fr       */
+/*   Updated: 2023/01/07 15:48:47 by machaiba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,19 +81,3 @@ char	**ft_split(char *s, char c)
 	ft_allocation(str, s, nword, c);
 	return (str);
 }
-
-// int main()
-// {
-// 	char *str = "PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki";
-// 	// printf("%s\n", *ft_split(str, ' '));
-// 	char **p = ft_split(str, ':');
-// 	int y = 0;
-
-// 	while (p[y])
-// 	{
-// 		printf("%s\n", p[y]);
-// 		y++;
-// 	}
-
-// 	// printf("%s\n", p[x][0]);
-// }

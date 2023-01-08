@@ -6,7 +6,7 @@
 /*   By: machaiba <machaiba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 02:39:54 by machaiba          #+#    #+#             */
-/*   Updated: 2023/01/06 18:16:13 by machaiba         ###   ########.fr       */
+/*   Updated: 2023/01/07 22:56:24 by machaiba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,16 @@ typedef struct pipex
 	int		outfile;
 }	t_all;
 
+typedef struct pipex2
+{
+	int		x;
+	int		y;
+	char	**str;
+	char	**str1;
+	char	*join1;
+	char	*join2;
+}	t_cmd;
+
 char	**ft_split(char *s, char c);
 size_t	ft_strlen(char *str);
 char	*ft_strdup(char *s1);
@@ -37,5 +47,6 @@ char	*ft_strjoin(char *s1, char *s2);
 char	**get_path(char **env);
 char	*cmdcheck(char **av, char **env);
 char	*cmdcheck2(char **av, char **env);
+void	child1(char **av, char **env);
 
 #endif

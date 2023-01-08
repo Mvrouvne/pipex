@@ -6,45 +6,35 @@
 /*   By: machaiba <machaiba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 15:33:45 by machaiba          #+#    #+#             */
-/*   Updated: 2023/01/06 22:32:05 by machaiba         ###   ########.fr       */
+/*   Updated: 2023/01/07 21:30:14 by machaiba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-char *cmdcheck(char **av, char **env)
+char	*cmdcheck(char **av, char **env)
 {
-	int     x;
-	int     y;
-	char    **str = get_path(env);
-	char    **str1 = ft_split(av[2], ' ');
-	char	*join1;
-	char	*join2;
-	
-	x = 0;
-	y = 0;
+	t_cmd	pi;
+
+	pi.str = get_path(env);
+	pi.str1 = ft_split(av[2], ' ');
+	pi.x = 0;
 	if (av[2][0] == '/')
 	{
-		execve(av[2], str1, env);
-		write(2, "command not found\n", 37);
+		execve(av[2], pi.str1, env);
+		write(2, "command not found\n", 18);
 		exit(127);
 	}
-	
-	while (str && str[y])
+	while (pi.str && pi.str[pi.x])
 	{
-		join1 = ft_strjoin(str[y] , "/");
-		join2 = ft_strjoin(join1 , str1[0]);
-		if (access(join2, X_OK) == 0)
-			execve(join2, str1, env);
-		free(join1);
-		free(join2);
-		y++;
+		pi.join1 = ft_strjoin(pi.str[pi.x], "/");
+		pi.join2 = ft_strjoin(pi.join1, pi.str1[0]);
+		if (access(pi.join2, X_OK) == 0)
+			execve(pi.join2, pi.str1, env);
+		free(pi.join1);
+		free(pi.join2);
+		pi.x++;
 	}
 	write(2, "command not found\n", 18);
 	exit(127);
 }
-
-// int	main(int ac, char **av,  char **env)
-// {
-// 	printf("%s", cmdcheck(av, env));
-// }
