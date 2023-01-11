@@ -6,7 +6,7 @@
 /*   By: machaiba <machaiba@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 02:39:54 by machaiba          #+#    #+#             */
-/*   Updated: 2023/01/07 22:56:24 by machaiba         ###   ########.fr       */
+/*   Updated: 2023/01/11 16:39:45 by machaiba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <fcntl.h>
-#include <stdio.h>
-#include <string.h>
 
 typedef struct pipex
 {
@@ -47,6 +45,5 @@ char	*ft_strjoin(char *s1, char *s2);
 char	**get_path(char **env);
 char	*cmdcheck(char **av, char **env);
 char	*cmdcheck2(char **av, char **env);
-void	child1(char **av, char **env);
 
 #endif
